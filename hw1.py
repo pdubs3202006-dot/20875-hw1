@@ -28,10 +28,10 @@ def problem1(year):
     Even year: Return "even" unless it is leap year, then return a string "leap"
     leap year: Return a string "leap"
     """
-    if (year % 4 = 0 and year % 400): #checks if leap year
+    if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0): #checks if leap year
         return "leap"
     else:
-        if year % 2: #checks if odd
+        if year % 2 == 1: #checks if odd
             return "odd"
         else: #if it isn't, then it's even
             return "even"
@@ -46,10 +46,10 @@ def problem2(given_number):
     x = 0
     y = 0
     list1 = []
-    while (x = 0):
+    while (x == 0):
         #calculates the next pentogramal number and checks that it is less than the given
         y = y + 1
-        z = y * (3 * y - 1) * .5 
+        z = y * (3 * y - 1) // 2 
         if given_number > z:
             x = 1
         else:
@@ -81,4 +81,5 @@ if __name__ == '__main__' :
     print("Problem 2 answer correct?",problem2(12)==[1, 5, 12], "      Student answer was:", problem2(12))
     print("Problem 2 answer correct?",problem2(20)==[1, 5, 12], "      Student answer was:", problem2(20))
     print("Problem 2 answer correct?",problem2(35)==[1, 5, 12, 22, 35], "      Student answer was:", problem2(35))
+
 
